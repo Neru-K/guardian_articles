@@ -1,18 +1,19 @@
-body {
+.background {
     background-color: #000;
     position: relative;
+    display: grid;
+    height: 100vh;
 }
 
 .circle {
     border-radius: 50%;
     background-color: #000;
-    width: 240px;
-    height: 260px;
+    width: 180px;
+    height: 180px;
     margin: auto;
-    transform: skew(0deg, -13deg);
-    filter: blur(24px) contrast(2.4);
-    box-shadow: -110px 40px 70px -40px #ffe500, 6px 96px 70px -32px #ffe500, 0 0px 100px 130px #8d1f00c9;
-    display: grid;
+    transform: skew(0deg, -11deg);
+    filter: blur(24px) contrast(2);
+    box-shadow: -100px 20px 70px -20px #fff496, 6px 96px 82px -21px #fff9c7, 56px 93px 64px -52px #ffffff, 86px 56px 90px -2px #ffe500, 0 0px 100px 130px #8d1f00c9;
     place-content: center;
     position: relative;
 }
@@ -29,4 +30,36 @@ body {
     border-radius: 50%;
     filter: blur(10px);
     transform: skew(10deg, 10deg);
+}
+
+@keyframes animation-blackhole {
+    0% {
+        box-shadow: -100px 20px 70px -20px #fff496, 6px 96px 82px -21px #fff9c7, 56px 93px 64px -52px #ffffff, 86px 56px 90px -2px #ffe500, 0 0px 100px 130px #8d1f00c9;
+    }
+
+    50% {
+        box-shadow: -70px -10px 70px -20px #fff496, 6px 96px 82px -21px #fff9c7, 56px 93px 64px -52px #ffffff, 66px 26px 90px -32px #ffe500, -20px -20px 100px 130px #8d1f0087;
+    }
+
+    100% {
+        box-shadow: -100px 20px 70px -20px #fff496, 6px 96px 82px -21px #fff9c7, 56px 93px 64px -52px #ffffff, 86px 56px 90px -2px #ffe500, 0 0px 100px 130px #8d1f00c9;
+    }
+}
+
+@keyframes animation-blackhole2 {
+    0% {
+        transform: skew(0deg, -11deg);
+    }
+
+    50% {
+        transform: skew(0deg, -6deg) rotate(5deg);
+    }
+
+    100% {
+        transform: skew(0deg, -11deg);
+    }
+}
+
+.animation-box {
+    animation: animation-blackhole forwards 12s infinite 0s, animation-blackhole2 forwards 15s infinite 2s;
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        transform: rotate(0deg);
+        transition: all 10s ease-out;
+      }
+      .container.on {
+        transform: rotate(360deg);
+      }
+      .blackhole {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: calc(50% - 50px);
+        top: calc(50% - 50px);
+        background-color: #000;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>
+        サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+      </p>
+      <div class="blackhole"></div>
+    </div>
+    <script>
+      const blackhole = document.querySelector(".blackhole");
+      const container = document.querySelector(".container");
+      const texts = container.querySelectorAll("p");
+
+      for (let i = 0; i < texts.length; i++) {
+        const chars = texts[i].textContent.trim().split("");
+        const span = document.createElement("span");
+        let txt = "";
+        chars.forEach(function (char) {
+          txt += '<span class="target">' + char + "</span>";
+        });
+        texts[i].innerHTML = txt;
+      }
+
+      // chars.forEach(function (char) {
+      //   const span = document.createElement("span");
+      //   span.innerText = char;
+      //   texts[i].appendChild(span);
+      // });
+    </script>
+  </body>
+</html>

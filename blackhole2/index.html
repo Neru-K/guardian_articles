@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        transform: rotate(0deg);
+        transition: all 10s ease-out;
+      }
+      .container.on {
+        transform: rotate(360deg);
+      }
+      .blackhole {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: calc(50% - 50px);
+        top: calc(50% - 50px);
+        background-color: #000;
+        border-radius: 50%;
+      }
+      .star {
+        position: absolute;
+        transition: all 10s ease-out;
+      }
+      .star:first-child {
+        top: 30%;
+        left: 17%;
+      }
+      .star:nth-of-type(2) {
+        top: 80%;
+        left: 58%;
+      }
+      .star:nth-of-type(3) {
+        top: 22%;
+        left: 66%;
+      }
+      .star:nth-of-type(4) {
+        top: 50%;
+        left: 3%;
+      }
+      .star:nth-of-type(5) {
+        top: 80%;
+        left: 67%;
+      }
+      .star:nth-of-type(6) {
+        top: 80%;
+        left: 88%;
+      }
+      .star:nth-of-type(7) {
+        top: 44%;
+        left: 25%;
+      }
+      .star:nth-of-type(8) {
+        top: 9%;
+        left: 90%;
+      }
+      .star:nth-of-type(9) {
+        top: 23%;
+        left: 40%;
+      }
+      .star:nth-of-type(10) {
+        top: 60%;
+        left: 88%;
+      }
+      .star.on {
+        left: 50%;
+        top: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <span class="star">☆</span>
+      <div class="blackhole"></div>
+    </div>
+    <script>
+      const stars = document.querySelectorAll(".star");
+      const blackhole = document.querySelector(".blackhole");
+      const container = document.querySelector(".container");
+
+      blackhole.addEventListener(
+        "mouseenter",
+        function () {
+          stars.forEach(function (el) {
+            el.classList.add("on");
+            container.classList.add("on");
+          });
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
