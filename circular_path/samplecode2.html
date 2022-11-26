@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="square">
+    <div class="innercircle"></div>
+    <span><img src="bee-gd1c39d62d_1280.png" /></span>
+  </div>
+</div>
+
+<style>
+  .container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+  }
+  .container .square {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    background-color: rgba(0, 255, 255, 0.2);
+    animation: example1-rotate 3s infinite linear;
+  }
+  .container .innercircle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border: 1px solid;
+    border-radius: 50%;
+    transform: scale(1.2);
+  }
+  .container .square span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    animation: example1-rotate2 3s infinite linear;
+  }
+  .container .square span img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  @keyframes example1-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes example1-rotate2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+</style>

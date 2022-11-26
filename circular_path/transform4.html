@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="-w-examplecss3">
+      <div class="circle"><span></span></div>
+    </div>
+    <style>
+      .-w-examplecss3 {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        --x: 150px;
+        --y: 150px;
+      }
+      .-w-examplecss3 .circle {
+        width: calc(2 * var(--x));
+        height: calc(2 * var(--y));
+        border-radius: 50%;
+        border: 1px solid;
+        position: relative;
+        display: grid;
+        place-items: center;
+      }
+      .-w-examplecss3 .circle span {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #00f;
+        transform: translateX(150px) translateY(0);
+        position: relative;
+        animation: example5-AxisX 4s infinite backwards ease-in;
+      }
+      .-w-examplecss3 .circle span::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation: example5-AxisY 4s infinite forwards ease-out;
+        background-image: url(bee-gd1c39d62d_1280.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      @keyframes example6-AxisX {
+        0% {
+          transform: translate(200px, 0);
+        }
+        25% {
+          transform: translate(0, 300px);
+        }
+        50% {
+          transform: translate(-50%, 150px);
+        }
+        75% {
+          transform: translate(0px, 0px);
+        }
+        100% {
+          transform: translate(200px, 0);
+        }
+      }
+      @keyframes example6-AxisY {
+        0% {
+          transform: translate(0px, 0px);
+        }
+        25% {
+          transform: translate(50px, -250px);
+        }
+        50% {
+          transform: translate(-80px, -80px);
+        }
+        75% {
+          transform: translate(30px, 180px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+    </style>
+  </body>
+</html>
